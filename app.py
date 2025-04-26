@@ -9,7 +9,7 @@ import os
 from sentence_transformers import SentenceTransformer
 
 # === App config ===
-st.set_page_config(page_title="LogSmart Classifier", page_icon="📑", layout="wide")
+st.set_page_config(page_title="LogSmart", page_icon="📑", layout="wide")
 
 # === Load models ===
 @st.cache_resource
