@@ -97,6 +97,8 @@ if uploaded_file:
                     mime='text/csv'
                 )
 
+                st.pyplot(fig)
+
     except Exception as e:
         st.error(f"⚠️ Error occurred: {e}")
 
