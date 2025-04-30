@@ -66,21 +66,7 @@ if uploaded_file:
                 # --- Analytics Section ---
                 import matplotlib.pyplot as plt
 
-                st.markdown("## 📊 Log Category Distribution")
-
-                # Group by log_category and count
-                category_counts = final_df["log_category"].value_counts()
-
-                # Plot
-                fig, ax = plt.subplots(figsize=(10, 5))
-                category_counts.plot(kind='bar', color='skyblue', edgecolor='black', ax=ax)
-                plt.title('Number of Logs per Category', fontsize=16)
-                plt.xlabel('Log Category', fontsize=12)
-                plt.ylabel('Number of Logs', fontsize=12)
-                plt.xticks(rotation=45, ha='right')
-                plt.tight_layout()
-
-                st.pyplot(fig)
+                
 
                 # Show preview
                 st.subheader("🔍 Preview of classified logs:")
@@ -96,6 +82,20 @@ if uploaded_file:
                     file_name='classified_logs.csv',
                     mime='text/csv'
                 )
+
+                st.markdown("## 📊 Log Category Distribution")
+
+                # Group by log_category and count
+                category_counts = final_df["log_category"].value_counts()
+
+                # Plot
+                fig, ax = plt.subplots(figsize=(10, 5))
+                category_counts.plot(kind='bar', color='skyblue', edgecolor='black', ax=ax)
+                plt.title('Number of Logs per Category', fontsize=16)
+                plt.xlabel('Log Category', fontsize=12)
+                plt.ylabel('Number of Logs', fontsize=12)
+                plt.xticks(rotation=45, ha='right')
+                plt.tight_layout()
 
                 st.pyplot(fig)
 
